@@ -1,0 +1,9 @@
+server:
+  port: 80
+dubbo:
+  application:
+    name: web-manager
+  registry:
+    address: zookeeper://134.175.98.171:2181
+  consumer:
+    check: false
