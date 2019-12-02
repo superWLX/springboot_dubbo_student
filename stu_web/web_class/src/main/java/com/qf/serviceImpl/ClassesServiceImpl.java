@@ -27,4 +27,10 @@ public class ClassesServiceImpl implements IClassesService {
     public Classes queryById(Integer id) {
         return classesMapper.selectById(id);
     }
+
+    @Override
+    public void update(Classes classes) {
+        classesMapper.update(classes,null);
+    }
+
 }

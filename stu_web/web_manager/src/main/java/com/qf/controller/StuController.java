@@ -22,4 +22,18 @@ public class StuController {
         model.addAttribute("stulist",list);
         return "stulist";
     }
+
+    @RequestMapping("/add")
+    public String add(Student student){
+        System.out.println(student);
+        System.out.println("========================================");
+        stuService.add(student);
+        return "index";
+    }
+
+    @RequestMapping("/toadd")
+    public String toadd(){
+        return "addStu";
+    }
+
 }

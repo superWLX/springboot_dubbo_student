@@ -30,4 +30,13 @@ public class StuServiceImpl implements IStuService {
         }
         return students;
     }
+
+    @Override
+    public void add(Student student) {
+        stuMapper.insert(student);
+        Classes classes = classesService.queryById(student.getCid());
+        classes.setCnum(classes.getCnum()+1);
+        classesService.update(classes);
+    }
+
 }
